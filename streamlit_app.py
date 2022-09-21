@@ -74,7 +74,7 @@ if streamlit.button('Add a Fruit to the List'):
 #Allow the end user to remove a fruit from the list
 def delete_row_snowflake(remove_fruit):
     with my_cnx.cursor() as my_cur:
-         my_cur.execute("delete from fruit_load_list where fruit_name Like ("+remove_fruit+") ")
+         my_cur.execute("delete from fruit_load_list where fruit_name Like ('"+remove_fruit+"') ")
          return "Thanks for removing bad fruit " + remove_fruit
     
 remove_my_fruit = streamlit.text_input('Remove a bad fruit from my list, Please!')
